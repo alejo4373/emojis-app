@@ -24,6 +24,11 @@ const App = () => {
 
   const handleSearchClick = (e) => {
     let filtered = emojis.filter(emoji => emoji.annotation.includes(filterText))
+    filtered.sort((emojiA, emojiB) => {
+      if (emojiA.annotation < emojiB.annotation) return -1
+      if (emojiA.annotation > emojiB.annotation) return 1
+      return 0
+    })
     setFilteredEmojis(filtered)
   }
 
