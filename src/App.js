@@ -18,8 +18,12 @@ const App = () => {
     fetchAllEmojis()
   }, [])
   return (
-    <div className="App">
-      {emojis.map(emoji => <EmojiCard key={emoji.hexcode} emoji={emoji} />)}
+    <div className="App ui container">
+      <h1>Emoji App</h1>
+      <p>This App displays a list of all available emojis thanks to <a href="emojibase.dev">Emojibase.dev</a></p>
+      <div className="ui cards centered">
+        {emojis.map(emoji => <EmojiCard key={emoji.hexcode} emoji={emoji} />)}
+      </div>
     </div>
   );
 }
