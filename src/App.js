@@ -19,7 +19,7 @@ const App = () => {
   }, [])
   return (
     <div className="App">
-      {emojis.map(emoji => <EmojiCard emoji={emoji} />)}
+      {emojis.map(emoji => <EmojiCard key={emoji.hexcode} emoji={emoji} />)}
     </div>
   );
 }
